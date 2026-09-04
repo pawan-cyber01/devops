@@ -1,0 +1,21 @@
+name: Simple CI
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: echo "Building project"
+
+      - name: Test
+        run: echo "Running tests"
+
+      - name: Finish
+        run: echo "CI completed successfully"
