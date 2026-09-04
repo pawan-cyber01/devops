@@ -1,0 +1,34 @@
+name: System Info CI
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  system-info:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show OS information
+        run: uname -a
+
+      - name: Show current user
+        run: whoami
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Show files
+        run: ls -la
+
+      - name: Show memory information
+        run: free -h
+
+      - name: Show disk information
+        run: df -h
+
+      - name: Finish
+        run: echo "System information workflow completed in int331 12 28 PM"
